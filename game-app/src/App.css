@@ -23,7 +23,7 @@ body{
   cursor: pointer;
 }
 
-.Column2 {
+.divider {
   background-color:rgb(170, 60, 50);
   height:70vh;
   justify-content: flex-start;

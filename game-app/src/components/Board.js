@@ -59,7 +59,7 @@ function Board() {
             !board? null :
             board.map((collumn, i) => {
                 return <>
-                {i===0&& <div className="Column2" />}
+                {i===0&& <div className="divider" />}
                 <div 
                 onClick={() => {
                 if(winner){ return }
@@ -79,7 +79,7 @@ function Board() {
                         })
                     }
                 </div>
-                <div className="Column2" />
+                <div className="divider" />
                 </>
             })
         }
