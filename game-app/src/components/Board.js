@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react';
 import checkBoard from './checkBoard';
-import { CSSTransition } from 'react-transition-group'
 import Slide from '@material-ui/core/Slide';
 
 function Board() {
@@ -86,7 +85,7 @@ function Board() {
             </div>
         {
             !winner?null:
-            <div>{`The winner is : player${winner}`}</div>
+            <div>{winner}</div>
         }
         </>
 

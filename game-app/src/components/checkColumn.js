@@ -8,7 +8,7 @@ function checkColumn(board){
          board[j][i] === board[j][i + 2] &&
          board[j][i] === board[j][i + 3]
          ) {
-         winner = board[j][i];
+         winner = `The winner is : player ${board[j][i]}`;
          return winner;
         }
       }

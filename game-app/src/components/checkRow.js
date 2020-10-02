@@ -9,7 +9,7 @@ function checkRow(gameBoard) {
                 gameBoard[j][i] === gameBoard[j+3][i] 
             )
             {
-                win = gameBoard[j][i]
+                win = `The winner is : player ${gameBoard[j][i]}`
                 return win;
             }
         }
