@@ -18,7 +18,7 @@ empty square within the selected column. The game immediately ends when one play
 ## Requirements:
 - The players should have a className to be recognized with: player1, player2 
 - The game board should be consisted of 7 columns, with each of them having an id: column1, column2, column3...
-- Each of the columns should be consisted of 6 squares, with each of them having an id: square1, square2, square3..
+- Each of the columns should be consisted of 6 squares, with each of them having an id: square1, square2, square3...
 - When a square is being clicked by one of the players, a sub-div will be inserted into it with the className of it's player (player1 goes first)
 - Game result (victory/tie) should be represented in a modal, that is labeled with the className: winModal
 
