@@ -6,13 +6,13 @@ Two players take turns in threading their balls into one of the seven columns. A
 empty square within the selected column. The game immediately ends when one player connects four balls or when there is a tie.
  
  
- ## Instructions
-Import this repository into your github account.
-Clone the repository from your account to your computer.
-Install the project dependencies.
-Create new branch for your all work.
-Change the project to meet the requirements, commit only to your work branch.
-Make sure you projects passes all of the tests attached.
+ ## Proeject Instructions
+1. Import this repository into your github account.
+2. Clone the repository from your account to your computer.
+3. Install the project dependencies.
+4. Create new branch for your all work.
+5. Change the project to meet the requirements, commit only to your work branch.
+6. Make sure you projects passes all of the tests attached.
 
 
 ## Requirements:
