@@ -8,7 +8,7 @@ function checkDiagonal(e) {
                 e[i][j] === e[i+2][j-2] &&
                 e[i][j] === e[i+3][j-3])
             {
-                winner = e[i][j]
+                winner = `The winner is : player ${e[j][i]}`
                 return winner;
             }
         }
@@ -22,7 +22,7 @@ function checkDiagonal(e) {
                 e[i][j] === e[i+2][j+2] &&
                 e[i][j] === e[i+3][j+3]
             ){
-                winner = e[i][j];
+                winner = `The winner is : player ${e[j][i]}`;
                 return winner;
             }
         }

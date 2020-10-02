@@ -1,10 +1,12 @@
 import React, {useState,useEffect} from 'react';
 import checkBoard from './checkBoard';
+import Slide from '@material-ui/core/Slide';
 
 function Board() {
     const [board, setBoard] = useState([[]]);
     const [turn, setTurn] = useState(0);
     const [winner, setWinner] = useState();
+
     useEffect(() => {
         emptyBoard();
     },[])
@@ -39,7 +41,6 @@ function Board() {
     useEffect(() => {
         if(board[0][0] !== undefined){
             const myWinner = checkBoard(board);
-            console.log(myWinner);
             if(myWinner){
                 setWinner(myWinner);
                 setTimeout(() => {
@@ -57,7 +58,9 @@ function Board() {
                 return <>
                 {i===0&& <div className="Collumn2" />}
                 <div 
-                onClick={() => {if(winner){return;} insertTurn(i)}}
+                onClick={() => {
+                if(winner){ return }
+                insertTurn(i)}}
                 className="Collumn" id={`collumn${i}`}>
                     {
                         collumn.map((square, index) => {
@@ -65,7 +68,9 @@ function Board() {
                                 {
                                     square === 0 ? null
                                     :
+                                    <Slide direction="down" in={true} timeout={500}>
                                     <div className={square === 1? 'player1':'player2'}></div>
+                                    </Slide>
                                 }
                             </div>
                         })
@@ -78,7 +83,7 @@ function Board() {
             </div>
         {
             !winner?null:
-            <div>{`The winner is : player${winner}`}</div>
+            <div>{winner}</div>
         }
         </>
 
