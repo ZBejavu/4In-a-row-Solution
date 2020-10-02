@@ -3,7 +3,7 @@
 ## Game instructions:
 The goal of the game is to draw either a vertical, horizontal or diagonal line with fours balls of the same player chained together.
 Two players take turns in threading their balls into one of the seven columns. A ball falls down as low as possible to the next
-empty square within the selected column. The game immediately ends when one player connects four balls or when there is a tie.
+empty square within the selected column. The game immediately ends when one player connects four balls or alternatively when there is a tie.
  
  
  ## Proeject Instructions
