@@ -6,7 +6,7 @@ function Board() {
         for(let i =0; i< 7; i++){
             gameBoard[i] = [];
             for(let j =0; j<6; j++){
-                gameBoard[i][j] = j;
+                gameBoard[i][j] = 0;
             }
         }
         console.log(gameBoard);
@@ -15,7 +15,7 @@ function Board() {
 
   return (
     <div className="Board">
-                {
+        {
             !board? null :
             board.map((collumn, i) => {
                 return <div className="Collumn" id={`collumn${i}`}>
@@ -23,9 +23,9 @@ function Board() {
                         collumn.map((square, index) => {
                             return <div className="Square" id={`square${index}`}>
                                 {
-                                    // board[i][index] ===0? square 
-                                    // :
-                                    <div className={board[i][index] === 1? 'player1':'player2'}>{square}</div>
+                                    board[i][index] ===0? square 
+                                    :
+                                    <div className={board[i][index] === 1? 'player1':'player2'}></div>
                                 }
                             </div>
                         })
