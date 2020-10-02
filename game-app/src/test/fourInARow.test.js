@@ -6,8 +6,6 @@ describe('App Test', () => {
 
     beforeAll(async () => {
         browser = await puppeteer.launch({
-            headless:false,
-            slowMo: 40
         });
         page = await browser.newPage();
         await page.goto("http://localhost:3000/");
