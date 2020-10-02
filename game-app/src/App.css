@@ -2,13 +2,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10%;
+  width:75%;
+  margin-top: 5%;
 }
 .Collumn{
   margin-left: 10px;
+  height:70vh;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
   display: flex;
   flex-direction: column-reverse;
 }
+.Square{
+  background-color: aqua;
+  height: 15%;
+  width:100%;
+}
+.player1{
+  background: radial-gradient(circle at 100px 100px, brown, rgb(219, 118, 118));
+  display: block;
+  border-radius: 50%;
+  margin-left:10%;
+  height:100%;
+  width:80%;
+}
+.player2{
+  background: radial-gradient(circle at 100px 100px, rgb(54, 42, 165), rgb(85, 146, 196));
+  display: block;
+  height:100%;
+  margin-left:10%;
+  width:80%;
+  border-radius: 50%;
+}
+
 .App{
+  display: flex;
+  justify-content: center;
   width:100%;
 }
