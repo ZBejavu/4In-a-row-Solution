@@ -5,6 +5,15 @@ The goal of the game is to draw either a vertical, horizontal or diagonal line w
 Two players take turns in threading their balls into one of the seven columns. A ball falls down as low as possible to the next
 empty square within the selected column. The game immediately ends when one player connects four balls or when there is a tie.
  
+ 
+ ## Instructions
+Import this repository into your github account.
+Clone the repository from your account to your computer.
+Install the project dependencies.
+Create new branch for your all work.
+Change the project to meet the requirements, commit only to your work branch.
+Make sure you projects passes all of the tests attached.
+
 
 ## Requirements:
 - The players should have a className to be recognized with: player1, player2 
