@@ -16,13 +16,13 @@ function checkBoard(gameBoard){
         return winner;
     }
         if (
-            gameBoard[gameBoard.length-1][gameBoard[0].length-1] !== 0 &&
-            gameBoard[gameBoard.length-2][gameBoard[0].length-1] !== 0 &&
-            gameBoard[gameBoard.length-3][gameBoard[0].length-1] !== 0 &&
-            gameBoard[gameBoard.length-4][gameBoard[0].length-1] !== 0 &&
-            gameBoard[gameBoard.length-5][gameBoard[0].length-1] !== 0 &&
-            gameBoard[gameBoard.length-6][gameBoard[0].length-1] !== 0 &&
-            gameBoard[gameBoard.length-7][gameBoard[0].length-1] !== 0
+            gameBoard[gameBoard.length-1].findIndex(value => value === 0) === -1 &&
+            gameBoard[gameBoard.length-2].findIndex(value => value === 0) === -1 &&
+            gameBoard[gameBoard.length-3].findIndex(value => value === 0) === -1 &&
+            gameBoard[gameBoard.length-4].findIndex(value => value === 0) === -1 &&
+            gameBoard[gameBoard.length-5].findIndex(value => value === 0) === -1 &&
+            gameBoard[gameBoard.length-6].findIndex(value => value === 0) === -1 &&
+            gameBoard[gameBoard.length-7].findIndex(value => value === 0) === -1
             ) {
         return winner = 'no winner'
         }

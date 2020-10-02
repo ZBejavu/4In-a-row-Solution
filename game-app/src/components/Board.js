@@ -6,7 +6,6 @@ function Board() {
     const [board, setBoard] = useState([[]]);
     const [turn, setTurn] = useState(0);
     const [winner, setWinner] = useState();
-    const [transition, setTransition] = useState(false);
 
     useEffect(() => {
         emptyBoard();
@@ -61,7 +60,6 @@ function Board() {
                 <div 
                 onClick={() => {
                 if(winner){ return }
-                setTransition(true)
                 insertTurn(i)}}
                 className="Collumn" id={`collumn${i}`}>
                     {
