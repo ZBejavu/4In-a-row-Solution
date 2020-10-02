@@ -1,43 +1,79 @@
 .Board{
   display: flex;
-  align-items: center;
   justify-content: center;
-  width:75%;
+  height:80vh;
+  width:110vh;
   margin-top: 5%;
 }
 .Collumn{
-  margin-left: 10px;
+  border: 1px solid  rgb(163, 118, 67);
+  background-color: rgb(221, 178, 130);
   height:70vh;
-  align-items: center;
-  justify-content: space-between;
-  width: 15%;
+  justify-content: flex-start;
+  width: 100px;
   display: flex;
   flex-direction: column-reverse;
 }
+.Collumn2{
+  background-color:rgb(170, 60, 50);
+  height:70vh;
+  justify-content: flex-start;
+  width: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid  rgb(170, 60, 50);
+}
 .Square{
-  background-color: aqua;
-  height: 15%;
-  width:100%;
-}
-.player1{
-  background: radial-gradient(circle at 100px 100px, brown, rgb(219, 118, 118));
-  display: block;
-  border-radius: 50%;
-  margin-left:10%;
-  height:100%;
-  width:80%;
-}
-.player2{
-  background: radial-gradient(circle at 100px 100px, rgb(54, 42, 165), rgb(85, 146, 196));
-  display: block;
-  height:100%;
-  margin-left:10%;
-  width:80%;
-  border-radius: 50%;
+  height: 16%;
+  margin-bottom: 4%;
 }
 
 .App{
   display: flex;
   justify-content: center;
   width:100%;
+}
+
+
+.player1 {
+  width: 90%;
+  left:5%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+}
+
+.player1:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+
+.player2 {
+  width: 90%;
+  left:5%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #ff8f8f, #ff8f8f 10%, #940505 80%, #450606 100%);
+}
+.player2:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
 }

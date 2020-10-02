@@ -1,22 +1,28 @@
 import React, {useState,useEffect} from 'react';
+import checkBoard from './checkBoard';
+
 function Board() {
-    const [board, setBoard] = useState();
-    const [turn, setTurn] = useState(1);
+    const [board, setBoard] = useState([[]]);
+    const [turn, setTurn] = useState(0);
+    const [winner, setWinner] = useState();
     useEffect(() => {
+        emptyBoard();
+    },[])
+
+    function emptyBoard(){
         const gameBoard = [];
         for(let i =0; i< 7; i++){
             gameBoard[i] = [];
             for(let j =0; j<6; j++){
                 gameBoard[i][j] = 0;
             }
-        }
-        console.log(gameBoard);
+        };
         setBoard(gameBoard);
-    },[])
+        setWinner(false);
+    }
 
     function insertTurn(i){
         const myIndex = board[i].findIndex(value => value===0);
-        console.log(myIndex);
         if(myIndex === -1){
             return;
         }
@@ -28,22 +34,36 @@ function Board() {
             newBoard[i][myIndex] = 2;
             setTurn(turn+1);
         }
-        console.log(newBoard);
         setBoard(newBoard);
     }
+    useEffect(() => {
+        if(board[0][0] !== undefined){
+            const myWinner = checkBoard(board);
+            console.log(myWinner);
+            if(myWinner){
+                setWinner(myWinner);
+                setTimeout(() => {
+                    emptyBoard();
+                }, 3000);
+            }
+        }
+    },[board])
   return (
+      <>
     <div className="Board">
                 {
             !board? null :
             board.map((collumn, i) => {
-                return <div 
-                onClick={() => { insertTurn(i)}}
+                return <>
+                {i===0&& <div className="Collumn2" />}
+                <div 
+                onClick={() => {if(winner){return;} insertTurn(i)}}
                 className="Collumn" id={`collumn${i}`}>
                     {
                         collumn.map((square, index) => {
                             return <div className="Square" id={`square${index}`}>
                                 {
-                                    square === 0 ? null 
+                                    square === 0 ? null
                                     :
                                     <div className={square === 1? 'player1':'player2'}></div>
                                 }
@@ -51,10 +71,19 @@ function Board() {
                         })
                     }
                 </div>
+                <div className="Collumn2" />
+                </>
             })
         }
-    </div>
+            </div>
+        {
+            !winner?null:
+            <div>{`The winner is : player${winner}`}</div>
+        }
+        </>
+
   );
 }
+
 
 export default Board;

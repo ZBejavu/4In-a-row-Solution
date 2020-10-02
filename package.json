@@ -1,5 +1,5 @@
 {
-  "name": "4In-a-row-TEMPLATE",
+  "name": "4in-a-row-template",
   "version": "1.0.0",
   "description": "Template for solving the 4 In A Row Challenge",
   "main": "index.js",
