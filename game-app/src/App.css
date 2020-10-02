@@ -1,11 +1,12 @@
-.Board{
+.Board {
   display: flex;
   justify-content: center;
   height:80vh;
   width:110vh;
   margin-top: 5%;
 }
-.Collumn{
+
+.Column {
   border: 1px solid  rgb(163, 118, 67);
   background-color: rgb(221, 178, 130);
   height:70vh;
@@ -14,7 +15,12 @@
   display: flex;
   flex-direction: column-reverse;
 }
-.Collumn2{
+
+.Column:hover {
+  cursor: pointer;
+}
+
+.Column2 {
   background-color:rgb(170, 60, 50);
   height:70vh;
   justify-content: flex-start;
@@ -23,12 +29,13 @@
   flex-direction: column-reverse;
   border: 1px solid  rgb(170, 60, 50);
 }
-.Square{
+
+.Square {
   height: 16%;
   margin-bottom: 4%;
 }
 
-.App{
+.App {
   display: flex;
   justify-content: center;
   width:100%;

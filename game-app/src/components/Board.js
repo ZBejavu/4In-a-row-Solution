@@ -7,15 +7,11 @@ function Board() {
     const [turn, setTurn] = useState(0);
     const [winner, setWinner] = useState();
 
-    useEffect(() => {
-        emptyBoard();
-    },[])
-
     function emptyBoard(){
         const gameBoard = [];
-        for(let i =0; i< 7; i++){
+        for(let i = 0; i < 7; i++){
             gameBoard[i] = [];
-            for(let j =0; j<6; j++){
+            for(let j = 0; j < 6; j++){
                 gameBoard[i][j] = 0;
             }
         };
@@ -24,20 +20,25 @@ function Board() {
     }
 
     function insertTurn(i){
-        const myIndex = board[i].findIndex(value => value===0);
+        const myIndex = board[i].findIndex(value => value === 0);
         if(myIndex === -1){
             return;
         }
         const newBoard = board.slice();
-        if(turn%2 === 0){
+        if(turn % 2 === 0){
             newBoard[i][myIndex] = 1;
-            setTurn(turn+1);
+            setTurn(turn + 1);
         } else{
             newBoard[i][myIndex] = 2;
-            setTurn(turn+1);
+            setTurn(turn + 1);
         }
         setBoard(newBoard);
     }
+
+    useEffect(() => {
+        emptyBoard();
+    }, [])
+
     useEffect(() => {
         if(board[0][0] !== undefined){
             const myWinner = checkBoard(board);
@@ -48,7 +49,8 @@ function Board() {
                 }, 3000);
             }
         }
-    },[board])
+    }, [board])
+
   return (
       <>
     <div className="Board">
@@ -56,12 +58,12 @@ function Board() {
             !board? null :
             board.map((collumn, i) => {
                 return <>
-                {i===0&& <div className="Collumn2" />}
+                {i===0&& <div className="Column2" />}
                 <div 
                 onClick={() => {
                 if(winner){ return }
                 insertTurn(i)}}
-                className="Collumn" id={`collumn${i}`}>
+                className="Column" id={`column${i}`}>
                     {
                         collumn.map((square, index) => {
                             return <div className="Square" id={`square${index}`}>
@@ -69,20 +71,20 @@ function Board() {
                                     square === 0 ? null
                                     :
                                     <Slide direction="down" in={true} timeout={500}>
-                                    <div className={square === 1? 'player1':'player2'}></div>
+                                        <div className={square === 1? 'player1' : 'player2'}></div>
                                     </Slide>
                                 }
                             </div>
                         })
                     }
                 </div>
-                <div className="Collumn2" />
+                <div className="Column2" />
                 </>
             })
         }
             </div>
         {
-            !winner?null:
+            !winner ? null :
             <div>{winner}</div>
         }
         </>
