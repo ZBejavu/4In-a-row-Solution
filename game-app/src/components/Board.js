@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import checkBoard from './checkBoard';
 import Slide from '@material-ui/core/Slide';
+import Modal from '@material-ui/core/Modal';
 
 function Board() {
     const [board, setBoard] = useState([[]]);
@@ -44,9 +45,9 @@ function Board() {
             const myWinner = checkBoard(board);
             if(myWinner){
                 setWinner(myWinner);
-                setTimeout(() => {
-                    emptyBoard();
-                }, 3000);
+                // setTimeout(() => {
+                //     emptyBoard();
+                // }, 3000);
             }
         }
     }, [board])
@@ -83,10 +84,13 @@ function Board() {
             })
         }
             </div>
-        {
-            !winner ? null :
-            <div>{winner}</div>
-        }
+
+            <Modal open={winner? true : false} onClose={()=> {emptyBoard()}}>
+                <div className ='winModal'>
+                    <h2>Game Finished !</h2>
+                    <h2>{winner ==='tie'? 'A Tie !':`Winner is: player ${winner}`}</h2>
+                </div>
+            </Modal>
         </>
 
   );

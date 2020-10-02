@@ -5,6 +5,9 @@
   width:110vh;
   margin-top: 5%;
 }
+body{
+  background-color: rgb(206, 186, 150);
+}
 
 .Column {
   border: 1px solid  rgb(163, 118, 67);
@@ -83,4 +86,25 @@ filter: blur(3px);
   background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
  filter: blur(3px);
   z-index: 2;
+}
+
+
+.winModal{
+  position: 'absolute';
+  margin: auto;
+  margin-top : 10%;
+  height: 15%;
+  width: 25%;
+  text-align: center;
+  background-color: rgb(226, 85, 85);
+  border: 2px solid rgb(195, 195, 195);
+  box-shadow: rgb(75, 73, 71);
+  padding: 15px;
+  padding-top: 5px;
+}
+
+.winModal h2{
+  width: 90%;
+  text-align:center;
+  align-self: center;
 }

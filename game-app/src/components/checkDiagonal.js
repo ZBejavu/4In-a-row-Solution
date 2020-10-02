@@ -23,7 +23,7 @@ function checkDiagonal(e) {
                 e[i][j] === e[i+3][j+3]
             ){
                console.log(e[i][j],e[i+1][j+1],e[i+2][j+2],e[i+3][j+3])
-                winner = `The winner is : player ${e[i][j]}`;
+                winner = e[i][j];
                 return winner;
             }
         }

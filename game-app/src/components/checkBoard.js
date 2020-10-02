@@ -24,7 +24,7 @@ function checkBoard(gameBoard){
             gameBoard[gameBoard.length-6].findIndex(value => value === 0) === -1 &&
             gameBoard[gameBoard.length-7].findIndex(value => value === 0) === -1
             ) {
-        return winner = 'no winner'
+        return winner = 'tie'
         }
 }
 
