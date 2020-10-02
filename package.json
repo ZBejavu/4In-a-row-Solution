@@ -1,0 +1,20 @@
+{
+  "name": "4In-a-row-TEMPLATE",
+  "version": "1.0.0",
+  "description": "Template for solving the 4 In A Row Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZBejavu/4In-a-row-TEMPLATE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZBejavu/4In-a-row-TEMPLATE/issues"
+  },
+  "homepage": "https://github.com/ZBejavu/4In-a-row-TEMPLATE#readme"
+}
