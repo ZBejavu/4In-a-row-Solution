@@ -1,12 +1,13 @@
+body {
+  background-color: rgb(206, 186, 150);
+}
+
 .Board {
   display: flex;
   justify-content: center;
   height:80vh;
   width:110vh;
   margin-top: 5%;
-}
-body{
-  background-color: rgb(206, 186, 150);
 }
 
 .Column {
@@ -75,6 +76,7 @@ filter: blur(3px);
   position: relative;
   background: radial-gradient(circle at 50% 120%, #ff8f8f, #ff8f8f 10%, #940505 80%, #450606 100%);
 }
+
 .player2:before {
   content: "";
   position: absolute;
@@ -89,7 +91,7 @@ filter: blur(3px);
 }
 
 
-.winModal{
+.winModal {
   position: 'absolute';
   margin: auto;
   margin-top : 10%;
@@ -103,7 +105,7 @@ filter: blur(3px);
   padding-top: 5px;
 }
 
-.winModal h2{
+.winModal h2 {
   width: 90%;
   text-align:center;
   align-self: center;

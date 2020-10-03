@@ -8,11 +8,11 @@ function Board() {
     const [turn, setTurn] = useState(0);
     const [winner, setWinner] = useState();
 
-    function emptyBoard(){
+    function emptyBoard() {
         const gameBoard = [];
-        for(let i = 0; i < 7; i++){
+        for(let i = 0; i < 7; i++) {
             gameBoard[i] = [];
-            for(let j = 0; j < 6; j++){
+            for(let j = 0; j < 6; j++) {
                 gameBoard[i][j] = 0;
             }
         };
@@ -20,7 +20,7 @@ function Board() {
         setWinner(false);
     }
 
-    function insertTurn(i){
+    function insertTurn(i) {
         const myIndex = board[i].findIndex(value => value === 0);
         if(myIndex === -1){
             return;
@@ -57,16 +57,16 @@ function Board() {
     <div className="Board">
                 {
             !board? null :
-            board.map((collumn, i) => {
+            board.map((column, i) => {
                 return <>
-                {i===0&& <div className="divider" />}
+                {i === 0 && <div className="divider" />}
                 <div 
                 onClick={() => {
                 if(winner){ return }
                 insertTurn(i)}}
                 className="Column" id={`column${i}`}>
                     {
-                        collumn.map((square, index) => {
+                        column.map((square, index) => {
                             return <div className="Square" id={`square${index}`}>
                                 {
                                     square === 0 ? null
