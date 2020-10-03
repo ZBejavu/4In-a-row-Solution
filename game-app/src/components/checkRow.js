@@ -1,7 +1,7 @@
 function checkRow(gameBoard) {
     let win = false;
-    for(let i = 0; i< 6; i++) {
-        for(let j = 0; j<4; j++) {
+    for(let i = 0; i < 6; i++) {
+        for(let j = 0; j < 4; j++) {
             if(
                 gameBoard[j][i] !== 0 && 
                 gameBoard[j][i] === gameBoard[j+1][i] &&

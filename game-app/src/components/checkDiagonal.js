@@ -1,7 +1,7 @@
 function checkDiagonal(e) {
     let winner;
 
-    for (let i = 0; i <= 3; i++){
+    for (let i = 0; i <= 3; i++) {
         for (let j = 5; j >= 0; j--) {
             if (e[i][j] !== 0 &&
                 e[i][j] === e[i+1][j-1] &&
@@ -14,8 +14,8 @@ function checkDiagonal(e) {
         }
     } 
 
-    for (let i = 0; i< 4; i++){
-        for(let j = 2; j> -1; j--){
+    for (let i = 0; i< 4; i++) {
+        for(let j = 2; j> -1; j--) {
             if(
                 e[i][j] !== 0 &&
                 e[i][j] === e[i+1][j+1] &&

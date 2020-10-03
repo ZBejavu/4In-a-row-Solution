@@ -1,4 +1,4 @@
-function checkColumn(board){
+function checkColumn(board) {
     let winner;
     for (let j = 0; j < 7; j++) {
         for (let i = 0; i < 3; i++) {
