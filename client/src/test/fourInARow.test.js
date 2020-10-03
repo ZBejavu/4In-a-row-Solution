@@ -27,14 +27,17 @@ describe('App Test', () => {
         await page.waitForSelector('#column0 #square1 .player2', {visible: true});
     });
 
-    test('Cannot insert more than 6 in a column', async () => {
+    test('Cannot insert more than 6 and turn doesnt change on full collumn click', async () => {
         await page.waitForSelector('#column0', {visible: true});
         for (let i = 0; i < 7; i++) {
             await (await page.$('#column0')).click();
         }
-        const player1 = await (await page.$$('#column0 .player1')).length;
-        const player2 = await (await page.$$('#column0 .player2')).length;
+        const player1 = await (await page.$$('.player1')).length;
+        const player2 = await (await page.$$('.player2')).length;
         expect(player1 + player2).toBe(6);
+        await (await page.$('#column1')).click();
+        const player1After = await (await page.$$('.player1')).length;
+        expect(player1After).toBe(4);
     });
 
     test('Can have a tie', async () => {
