@@ -12,6 +12,7 @@ describe('App Test', () => {
     });
 
     test("Checks if the board is empty", async () => {
+        await page.waitForSelector('#column0', {visible: true});
         const player1 = await page.$('.player1');
         const player2 = await page.$('.player2');
         expect(player1).toBeNull();
