@@ -4,7 +4,7 @@ describe('App Test', () => {
     let browser;
     let page;
 
-    beforeAll(async () => {
+    beforeEach(async () => {
         browser = await puppeteer.launch({
         });
         page = await browser.newPage();
@@ -20,12 +20,10 @@ describe('App Test', () => {
 
     test('Correct sign after click', async () => {
         await page.waitForSelector('#column0', {visible: true});
-            await (await page.$('#column0')).click()
-        const player1 = await page.waitForSelector('#column0 > #square0 .player1', {visible: true});
-        expect(player1).not.toBeNull();
-            await (await page.$('#column0')).click()
-        const player2 = await page.waitForSelector('#column0 > #square1 .player2', {visible: true});
-        expect(player2).not.toBeNull();
+        await (await page.$('#column0')).click()
+        await page.waitForSelector('#column0 #square0 .player1', {visible: true});
+        await (await page.$('#column0')).click()
+        await page.waitForSelector('#column0 #square1 .player2', {visible: true});
     })
 
     test('Can have a tie', async () => {
@@ -51,13 +49,7 @@ describe('App Test', () => {
         await page.waitForSelector('#column0', {visible: true});
         for(let i = 2 ; i < 5; i++) {
             for(let j = 0; j < 4; j++) {
-                if(i === 2 && j ===0) {
-                    console.log("got here")
                     await (await page.$(`#column${i}`)).click()
-                    await (await page.$(`#column${i}`)).click()
-                }else{
-                    await (await page.$(`#column${i}`)).click()
-                }
             }
         }
         await (await page.$('#column4')).click()
@@ -75,12 +67,7 @@ describe('App Test', () => {
     test('Can win vertical', async () => {
         await page.waitForSelector('#column1', {visible: true});
         for(let i = 0 ; i < 3; i++) {
-            if(i === 0) {
                 await (await page.$('#column1')).click()
-                await (await page.$('#column1')).click()
-            }else {
-                await (await page.$('#column1')).click()
-            }
         }
         for(let i = 1; i < 6; i++) {
             if(i % 2 === 0) {
@@ -98,7 +85,6 @@ describe('App Test', () => {
 
     test('Can win diagonal up', async () => {
         await page.waitForSelector('#column1', {visible: true});
-        await (await page.$('#column1')).click()
         await (await page.$('#column1')).click()
         await (await page.$('#column2')).click()
         await (await page.$('#column2')).click()
@@ -118,7 +104,6 @@ describe('App Test', () => {
     test('Can win diagonal down', async () => {
         await page.waitForSelector('#column1', {visible: true});
         await (await page.$('#column4')).click()
-        await (await page.$('#column4')).click()
         await (await page.$('#column3')).click()
         await (await page.$('#column3')).click()
 
@@ -134,7 +119,7 @@ describe('App Test', () => {
         expect(modal).not.toBeNull();
     })
 
-    afterAll(() => {
+    afterEach(() => {
         browser.close();
     });
 });
