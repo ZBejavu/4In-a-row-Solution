@@ -25,7 +25,7 @@ empty square within the selected column. The game immediately ends when one play
 
 ## Tests:
 - Board is initially empty when the game starts
-- First and second squares to be clicked will gain the classNames player1 and player2 respectively
+- First and second squares to be clicked will contain a sub-div with the className player1 and player2 respectively
 - The game can be ended with a tie (identified with a pop-up modal)
 - Player can win the game by having 4 balls in a row
 - Player can win the game by having 4 balls in a column
