@@ -45,9 +45,6 @@ function Board() {
             const myWinner = checkBoard(board);
             if(myWinner){
                 setWinner(myWinner);
-                // setTimeout(() => {
-                //     emptyBoard();
-                // }, 3000);
             }
         }
     }, [board])
