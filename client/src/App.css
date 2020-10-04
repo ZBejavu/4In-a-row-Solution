@@ -1,0 +1,112 @@
+body {
+  background-color: rgb(206, 186, 150);
+}
+
+.Board {
+  display: flex;
+  justify-content: center;
+  height:80vh;
+  width:110vh;
+  margin-top: 5%;
+}
+
+.Column {
+  border: 1px solid  rgb(163, 118, 67);
+  background-color: rgb(221, 178, 130);
+  height:70vh;
+  justify-content: flex-start;
+  width: 100px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.Column:hover {
+  cursor: pointer;
+}
+
+.divider {
+  background-color:rgb(170, 60, 50);
+  height:70vh;
+  justify-content: flex-start;
+  width: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid  rgb(170, 60, 50);
+}
+
+.Square {
+  height: 16%;
+  margin-bottom: 4%;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+
+
+.player1 {
+  width: 90%;
+  left:5%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+}
+
+.player1:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+filter: blur(3px);
+  z-index: 2;
+}
+
+.player2 {
+  width: 90%;
+  left:5%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #ff8f8f, #ff8f8f 10%, #940505 80%, #450606 100%);
+}
+
+.player2:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+ filter: blur(3px);
+  z-index: 2;
+}
+
+
+.winModal {
+  position: 'absolute';
+  margin: auto;
+  margin-top : 10%;
+  height: 15%;
+  width: 25%;
+  text-align: center;
+  background-color: rgb(226, 85, 85);
+  border: 2px solid rgb(195, 195, 195);
+  box-shadow: rgb(75, 73, 71);
+  padding: 15px;
+  padding-top: 5px;
+}
+
+.winModal h2 {
+  width: 90%;
+  text-align:center;
+  align-self: center;
+}

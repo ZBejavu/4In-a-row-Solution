@@ -37,4 +37,3 @@ player1 goes first !!
 * throughout the game each square will be filled with a child labeled by the className 'player1' or 'player2'.
 ## Win demonstrations:
 ![gameplay](./FourInARow.gif)
-
