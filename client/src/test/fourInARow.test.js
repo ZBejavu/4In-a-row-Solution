@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
-const debug = process.env.DEBUG;
+jest.setTimeout(6000);
+const debug = process.env.DEBUG == 'true'? 'true' : undefined;
 jest.setTimeout(debug ? 30000 : 6000);
 describe('App Test', () => {
     let browser;
