@@ -20,7 +20,7 @@ according to the turn. (player1 goes first)
 ## Tests:
 player1 goes first !!
 
-## for debug run in a new terminal - cd client; $env:DEBUG='true'; npm run test
+## for debug run in a new terminal - $env:DEBUG='true'; npm run test
 - Board is initially empty when the game starts
 - if you fill up a collumn with balls it won't exceed the 6 ball limit, and will not change the turn of the player.
 - Every time you click a column, it will add a div with the CORRECT className (player1 or player2) to the CORRECT square.
