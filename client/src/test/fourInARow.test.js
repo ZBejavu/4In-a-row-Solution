@@ -1,11 +1,14 @@
 const puppeteer = require('puppeteer');
-jest.setTimeout(6000);
+const debug = process.env.DEBUG;
+jest.setTimeout(debug ? 30000 : 6000);
 describe('App Test', () => {
     let browser;
     let page;
 
     beforeEach(async () => {
         browser = await puppeteer.launch({
+            headless: debug ? false : true,
+            slowMo: debug ? 45 : 0
         });
         page = await browser.newPage();
         await page.goto("http://localhost:3000/");
